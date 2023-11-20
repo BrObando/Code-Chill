@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+
+<%- include('../partials/footer') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALL TASKS LIST</title>
+</head>
+<body>
+    <h1>All Tasks</h1>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Priority</th>
+    
+        </tr>
+        <% tasks.forEach(f => { %>
+            <tr>
+              <td><%= task.title %></td>
+              <td><%= task.description%></td>
+              <td><%= task.priority || 'N/A'%></td>
+              <td><a href="/tasks/<%= task._id %>">Details</a></td>
+              
+            </tr>
+          <!-- Close the forEach using EJS here -->
+          <% }) %>
+    </table>
+</body>
+</html>
